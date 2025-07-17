@@ -35,8 +35,8 @@ export default function App() {
             const selected = quotes[randomIndex];
             setQuote(selected.quote);
             setAuthor(selected.author);
-        } catch (e) {
-            showErrorModal(e.message);
+        } catch (error) {
+            showErrorModal(error.message);
         }
     }
 
@@ -44,7 +44,7 @@ export default function App() {
         <>
             <div
                 ref={mainContent}
-                className={`mx-auto min-h-screen flex flex-col justify-center items-center ${!base64Image && 'bg-primary-content'}`}
+                className={`mx-auto min-h-dvh flex flex-col justify-center items-center ${!base64Image && 'bg-primary-content'}`}
                 style={{
                     backgroundImage: backgroundType !== 'theme' ? `url(${base64Image})` : 'none',
                     backgroundPosition: 'center',
