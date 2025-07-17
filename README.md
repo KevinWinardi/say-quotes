@@ -17,7 +17,7 @@ Say Quotes is a motivational quotes website that inspires life with quotes from 
 - Firebase Hosting
 
 ## Live Website
-https://sayquotes.web.app/
+https://sayquotes.web.app
 
 ## How to Run in Local
 1. Clone repository GitHub to local
