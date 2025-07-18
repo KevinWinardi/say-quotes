@@ -14,6 +14,7 @@ export default function SettingModal() {
 
     const themeCollapseRef = useRef();
     const backgroundCollapseRef = useRef();
+    const opacityCollapseRef = useRef();
 
     const themes = [
         'light', 'dark', 'cupcake', 'bumblebee', 'emerald',
@@ -31,6 +32,7 @@ export default function SettingModal() {
     function handleClose() {
         themeCollapseRef.current.checked = false;
         backgroundCollapseRef.current.checked = false;
+        opacityCollapseRef.current.checked = false;
     }
 
     function convertImageToBase64(file) {
@@ -91,7 +93,7 @@ export default function SettingModal() {
 
     return (
         <dialog id="modal-setting" className="modal">
-            <div className="modal-box">
+            <div className="modal-box max-h-10/12">
                 <h3 className="font-bold text-lg">Setting</h3>
                 <div className="py-4">
                     <div className="mb-8">
@@ -104,7 +106,7 @@ export default function SettingModal() {
                                         themes.map(item => (
                                             <label key={item} className="flex gap-4 cursor-pointer items-center">
                                                 <input type="radio" name="theme-radios" className="radio radio-sm theme-controller" value={item} checked={item == theme}
-                                                    onChange={(e) => setTheme(e.target.value)}
+                                                    onChange={(event) => setTheme(event.target.value)}
                                                 />
                                                 {item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()}
                                             </label>
@@ -190,7 +192,7 @@ export default function SettingModal() {
 
                     <div className="mb-8">
                         <div className="collapse collapse-arrow bg-base-100 border-base-300 border">
-                            <input type="checkbox" ref={themeCollapseRef} />
+                            <input type="checkbox" ref={opacityCollapseRef} />
                             <div className="collapse-title font-semibold">Opacity Card</div>
                             <div className="collapse-content text-sm">
                                 <div className="w-full">
